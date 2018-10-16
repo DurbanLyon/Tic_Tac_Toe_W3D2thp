@@ -11,14 +11,18 @@ class Player
 
 	def set_name_to(name)
 		@name = name
-	end 
+	end
 
 	def result_game(win_or_loose)
 		@win_or_loose = win_or_loose
 	end
+	def create_board_case()
+		essai = Board_case.new
+	end
 end
 @p1 = Player.new
 @p2 = Player.new
+@p1.create_board_case
 
 
 
@@ -31,7 +35,7 @@ class Board_case
 	end
 
 	def set_symbol_to(symbol)
-		@symbol = symbol 
+		@symbol = symbol
 	end
 end
 
@@ -60,18 +64,18 @@ def initialize()
 		@case8 = Board_case.new
 		@case9 = Board_case.new
 	end
-		
+
 
 	def display()
 		puts "|#{@case1.symbol}|#{@case2.symbol}|#{@case3.symbol}|"
 		puts "|#{@case4.symbol}|#{@case5.symbol}|#{@case6.symbol}|"
-		puts "|#{@case7.symbol}|#{@case8.symbol}|#{@case9.symbol}|"		
+		puts "|#{@case7.symbol}|#{@case8.symbol}|#{@case9.symbol}|"
 	end
 
 
 
 
-set_name 
+set_name
 initialize
 display
 
