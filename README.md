@@ -15,3 +15,9 @@ Voici les règles du programme :
 * À la fin d'une partie, le programme doit proposer une autre partie
 * Un effort sera à faire sur la présentation (par ex: board affiché de façon stylé, compteur des parties, couleurs, etc...
 
+
+On a pas réussi à finaliser quelques fonctions :
+* éviter de remplir une case déjà remplie
+* chécker les combinaisons qui font gagner
+* proposer une nouvelle partie
+...
