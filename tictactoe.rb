@@ -229,10 +229,10 @@ def launcher()
 		puts "#{start.who_is_playing}: which case to fill ?"
 #		which_case_to_fill = start.board.which_case
 		which_case_to_fill = start.board.fill_the_case(symbol)
-		temp = start.board.combo
-		if temp == "w"
-			i = 10
-		end
+#		temp = start.board.combo
+#		if temp == "w"
+#			i = 10
+#		end
 		puts "#{start.who_is_playing} filled case: #{which_case_to_fill}"
 #		start.board.fill_the_case(symbol, which_case_to_fil)
 		i += 1
