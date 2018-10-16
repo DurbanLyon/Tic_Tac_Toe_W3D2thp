@@ -1,28 +1,29 @@
 #classes: GAME, BOARD, CASE, PLAYER 
 
+require "pry"
 
 
 
 
 class Game
-require "pry"
+
 	
 	def initialize()
-		board = Board.new
-		p1 = Player.new
-		p2 = Player.new
+		@@board = Board.new
+		@p1 = Player.new
+		@p2 = Player.new
 	end 
 
 	def set_name()
 		puts "Player 1 name:"
 		print ">"
 		name = gets.chomp
-		p1.set_name_to(name)
+		@p1.set_name_to(name)
 
 		puts "Player 2 name:"
 		print ">"
 		name = gets.chomp
-		p2.set_name_to(name)
+		@p2.set_name_to(name)
 	end
 
 	def random_first()
@@ -33,32 +34,40 @@ require "pry"
 		end
 	end
 
-	def round
+	def round()
 	board.which_case()
 	end
-binding pry
 
+	
 
 end
+
+
 
 class Board
 
 	# initialization 9 cases
-	def initialize
-		case1 = Board_case.new
-		case2 = Board_case.new
-		case3 = Board_case.new
-		case4 = Board_case.new
-		case5 = Board_case.new
-		case6 = Board_case.new
-		case7 = Board_case.new
-		case8 = Board_case.new
-		case9 = Board_case.new
+	def initialize()
+		@case1 = Board_case.new
+		@case2 = Board_case.new
+		@case3 = Board_case.new
+		@case4 = Board_case.new
+		@case5 = Board_case.new
+		@case6 = Board_case.new
+		@case7 = Board_case.new
+		@case8 = Board_case.new
+		@case9 = Board_case.new
 	end
 		
 
+	def display()
+		puts "|#{@case1.symbol}|#{@case2.symbol}|#{@case3.symbol}|"
+		puts "|#{@case4.symbol}|#{@case5.symbol}|#{@case6.symbol}|"
+		puts "|#{@case7.symbol}|#{@case8.symbol}|#{@case9.symbol}|"		
+	end
+
 	# Which symbol in function of player
-	def which_symbol
+	def which_symbol()
 		who_is_playing = first_player
 		if who_is_playing == 0
 			symbol = "X"
@@ -68,7 +77,7 @@ class Board
 	end
 
 	# input choice of the user for location case
-	def which_case
+	def which_case()
 		which_case_to_fill = gets.chomp.to_i
 	end
 	
@@ -98,12 +107,18 @@ class Board
 			puts "Thanks to give a value between 1 to 9"
 		end
 	end
+	#check if 3 symbols are align
+	def combo()
+	end
 
-
+end
 
 class Board_case
+
+	attr_accessor :symbol
+
 	def initialize()
-		@symbol = ""
+		@symbol = " "
 	end
 
 	def set_symbol_to(symbol)
@@ -112,6 +127,8 @@ class Board_case
 end
 
 class Player
+
+	attr_accessor :name
 
 	def initialize()
 		@name = ""
@@ -125,5 +142,6 @@ class Player
 		@win_or_loose = win_or_loose
 	end
 end
-end
 
+
+binding.pry
